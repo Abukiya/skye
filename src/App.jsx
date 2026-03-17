@@ -20,6 +20,10 @@ function App() {
           </Routes>
         </div>
 
+        <footer className="bg-gray-200 text-center p-4 mt-8">
+          &copy; 2024 Weather App. All rights reserved.
+        </footer>
+
       </div>
     </BrowserRouter>
   )
