@@ -8,7 +8,7 @@ import About from "./pages/About"
 function App() {
   return (
     <BrowserRouter>
-      <div className="min-h-screen bg-gray-100">
+      <div className="min-h-screen bg-gray-300">
 
         <Navbar />
 
