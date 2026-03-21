@@ -2,7 +2,7 @@ function ForecastCard({ day }) {
   const { date, temp_min, temp_max, description, icon, humidity, wind } = day
 
   return (
-    <article className="rounded-2xl border border-white/25 bg-white/10 p-4 text-white shadow-lg backdrop-blur-lg">
+    <article className="rounded-2xl border border-white/25 bg-white/10 p-4 text-white shadow-lg backdrop-blur-lg hover:scale-[1.02] transition-transform">
       <p className="text-sm text-white/70">{date}</p>
       <div className="flex items-center gap-3 mt-2">
         {icon && (

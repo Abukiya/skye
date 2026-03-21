@@ -1,10 +1,22 @@
-import SearchBar from "../components/SearchBar"
+import { useEffect } from "react"
+import { useSearchParams } from "react-router-dom"
 import ForecastCard from "../components/ForecastCard"
 import Loader from "../components/Loader"
 import useWeather from "../hooks/useWeather"
 
 function Forecast() {
   const { forecast, loading, error, searchForecast } = useWeather()
+  const [searchParams] = useSearchParams()
+  const cityFromQuery = searchParams.get("city")
+
+  useEffect(() => {
+    const cityToSearch = cityFromQuery || localStorage.getItem("lastCity")
+
+    if (cityToSearch) {
+      searchForecast(cityToSearch)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [cityFromQuery])
 
   const dailyForecast = () => {
     if (!forecast?.list) return []
@@ -58,12 +70,6 @@ function Forecast() {
   return (
     <div className="max-w-5xl mx-auto">
       <h1 className="text-2xl font-bold">5 Day Forecast</h1>
-      <p className="mt-2 mb-6 text-gray-700">
-        Search for a city to load the real 5-day forecast grouped by date.
-      </p>
-
-      <SearchBar onSearch={searchForecast} />
-
       {loading && <Loader />}
       {error && <p className="text-red-500 mt-4">{error}</p>}
 
