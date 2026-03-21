@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import SearchBar from "../components/SearchBar"
 import WeatherCard from "../components/WeatherCard"
 import Loader from "../components/Loader"
@@ -20,6 +21,17 @@ function Home() {
       )}
 
       {weather && <WeatherCard weather={weather} />}
+
+      {weather && (
+        <div className="mt-5 text-center">
+          <Link
+            to={`/forecast?city=${encodeURIComponent(weather.name)}`}
+            className="inline-block rounded-lg bg-blue-600 px-5 py-2 text-white hover:bg-blue-700"
+          >
+            View 5-Day Forecast
+          </Link>
+        </div>
+      )}
 
     </div>
   )
