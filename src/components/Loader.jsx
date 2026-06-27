@@ -1,9 +1,9 @@
 
 function Loader() {
   return (
-    <div className="flex items-center justify-center mt-4">
-      <div className="animate-spin  rounded-full h-8 w-8 border-t-2 border-b-2 border-gray-900"></div>
-      <span className="ml-2 text-gray-700">Loading...</span>
+    <div className="mt-6 flex items-center justify-center gap-3 text-slate-600">
+      <div className="h-8 w-8 animate-spin rounded-full border-2 border-slate-200 border-t-slate-900"></div>
+      <span className="text-sm font-medium">Loading...</span>
     </div>
   )
 }

@@ -68,28 +68,46 @@ function Forecast() {
   const fiveDay = dailyForecast()
 
   return (
-    <div className="max-w-5xl mx-auto">
-      <h1 className="text-2xl font-bold">5 Day Forecast</h1>
-      {loading && <Loader />}
-      {error && <p className="text-red-500 mt-4">{error}</p>}
-
-      {forecast?.city && (
-        <div className="mt-4 text-lg text-gray-800">
-          Forecast for {forecast.city.name}, {forecast.city.country}
+    <div className="mx-auto max-w-6xl">
+      <section className="rounded-4xl border border-slate-200 bg-white shadow-sm">
+        <div className="border-b border-slate-200 bg-linear-to-br from-slate-900 to-slate-800 px-6 py-8 text-white sm:px-8">
+          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/55">Five-day forecast</p>
+          <h1 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">Forecast overview</h1>
+          <p className="mt-3 max-w-2xl text-sm leading-6 text-white/70">
+            Review the next five days of temperature, humidity, wind, and conditions in a clear summary view.
+          </p>
         </div>
-      )}
 
-      {fiveDay.length > 0 && (
-        <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-          {fiveDay.map((day) => (
-            <ForecastCard key={day.date} day={day} />
-          ))}
+        <div className="px-6 py-6 sm:px-8 sm:py-8">
+          {forecast?.city && (
+            <div className="mb-6 rounded-3xl border border-slate-200 bg-slate-50 px-5 py-4 text-slate-700">
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500">Current city</p>
+              <p className="mt-2 text-lg font-medium text-slate-900">
+                Forecast for {forecast.city.name}, {forecast.city.country}
+              </p>
+            </div>
+          )}
+
+          {!loading && !error && !forecast && (
+            <div className="rounded-3xl border border-dashed border-slate-200 bg-slate-50 px-6 py-10 text-center text-slate-600">
+              <p className="text-lg font-medium text-slate-900">No forecast loaded yet</p>
+              <p className="mt-2 text-sm">Search a city from the home page to see the five-day forecast here.</p>
+            </div>
+          )}
+
+          {loading && <Loader />}
+
+          {error && <p className="mt-4 text-sm font-medium text-red-500">{error}</p>}
+
+          {fiveDay.length > 0 && (
+            <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+              {fiveDay.map((day) => (
+                <ForecastCard key={day.date} day={day} />
+              ))}
+            </div>
+          )}
         </div>
-      )}
-
-      {!loading && !error && !forecast && (
-        <p className="mt-4 text-gray-600">Start by searching a city above.</p>
-      )}
+      </section>
     </div>
   )
 }

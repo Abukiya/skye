@@ -8,22 +8,20 @@ import About from "./pages/About"
 function App() {
   return (
     <BrowserRouter>
-      <div className="min-h-screen bg-gray-300">
-
+      <div className="min-h-screen flex flex-col bg-slate-100 text-slate-900">
         <Navbar />
 
-        <div className="p-6">
+        <main className="flex-1 p-6">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/forecast" element={<Forecast />} />
             <Route path="/about" element={<About />} />
           </Routes>
-        </div>
+        </main>
 
-        <footer className="bg-gray-200 text-center p-4 mt-8">
-          &copy; 2024 Weather App. All rights reserved.
+        <footer className="mt-auto border-t border-slate-200 bg-white/80 px-6 py-4 text-center text-sm text-slate-600 backdrop-blur">
+          <p>&copy; 2026 Weather App. All rights reserved.</p>
         </footer>
-
       </div>
     </BrowserRouter>
   )
