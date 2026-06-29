@@ -9,7 +9,7 @@ function WeatherCard({ weather }) {
     })
 
   return (
-    <div className="mx-auto mt-8 w-full max-w-2xl overflow-hidden rounded-4xl border border-slate-200 bg-white shadow-sm">
+    <div className="mx-auto mt-8 w-full max-w-6xl overflow-hidden rounded-4xl border border-slate-200 bg-white shadow-sm">
       <div className="bg-linear-to-br from-slate-900 to-slate-800 px-6 py-6 text-white sm:px-8">
         <div className="mb-4 text-center">
         <h2 className="text-3xl font-semibold tracking-tight">
