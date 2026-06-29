@@ -1,4 +1,4 @@
-# React Weather App
+# skye
 
 This is a weather application built with React, Vite, and designed to provide current weather information and forecasts.
 
