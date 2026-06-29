@@ -20,7 +20,7 @@ This is a weather application built with React, Vite, and designed to provide cu
 ## Project Structure
 
 ```
-weather/
+skye/
 ├── public/
 ├── src/
 │   ├── assets/ (Static assets like images, icons)
