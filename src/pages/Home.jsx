@@ -25,7 +25,7 @@ function Home() {
             </p>
 
             <div className="mt-8 max-w-xl rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-              <SearchBar onSearch={searchWeather} />
+              <SearchBar onSearch={searchWeather} loading={loading} />
               {error && <p className="mt-3 text-sm font-medium text-red-500">{error}</p>}
             </div>
           </div>

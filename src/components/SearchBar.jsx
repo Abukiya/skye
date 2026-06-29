@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-function SearchBar({ onSearch }) {
+function SearchBar({ onSearch, loading }) {
   const [city, setCity] = useState("")
 
   const handleSubmit = (e) => {
@@ -19,8 +19,12 @@ function SearchBar({ onSearch }) {
         onChange={(e) => setCity(e.target.value)}
       />
 
-      <button className="rounded-full bg-slate-900 px-5 py-3 font-medium text-white shadow-sm transition-colors hover:bg-slate-800">
-        Search
+      <button
+        className="rounded-full bg-slate-900 px-5 py-3 font-medium text-white shadow-sm transition-colors hover:bg-slate-800"
+        type="submit"
+        disabled={loading} // Disable button when loading
+      >
+        {loading ? "Searching..." : "Search"} {/* Change button text based on loading state */}
       </button>
     </form>
   )

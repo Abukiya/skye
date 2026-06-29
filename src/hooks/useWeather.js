@@ -9,6 +9,7 @@ export default function useWeather() {
   const [error, setError] = useState(null)
 
   const searchWeather = async (city) => {
+    if (loading) return; // Prevent multiple concurrent calls
 
     try {
       setLoading(true);
@@ -33,6 +34,8 @@ export default function useWeather() {
   };
 
   const searchForecast = async (city) => {
+    if (loading) return; // Prevent multiple concurrent calls
+
     try {
       setLoading(true);
       setError(null);

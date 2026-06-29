@@ -88,7 +88,9 @@ function Forecast() {
             </div>
           )}
 
-          {!loading && !error && !forecast && (
+          {error && <p className="mt-4 text-sm font-medium text-red-500">{error}</p>}
+
+          {!loading && !error && !forecast?.list && (
             <div className="rounded-3xl border border-dashed border-slate-200 bg-slate-50 px-6 py-10 text-center text-slate-600">
               <p className="text-lg font-medium text-slate-900">No forecast loaded yet</p>
               <p className="mt-2 text-sm">Search a city from the home page to see the five-day forecast here.</p>
