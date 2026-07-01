@@ -55,8 +55,8 @@ skye/
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/Abukiya/react-weather-app.git
-    cd react-weather-app
+    git clone https://github.com/Abukiya/skye.git
+    cd skye
     ```
 
 2.  **Install dependencies:**
