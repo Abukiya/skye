@@ -80,5 +80,6 @@ skye/
 
 ## Usage
 
+
 -   Enter a city name in the search bar to get current weather and forecast information.
 -   Navigate through the application using the Navbar.
